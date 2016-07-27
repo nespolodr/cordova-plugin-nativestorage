@@ -31,7 +31,7 @@ public class NativeStorage extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         Log.v(TAG, "Init NativeStorage");
-        sharedPref = cordova.getActivity().getPreferences(Context.MODE_PRIVATE);
+        sharedPref = cordova.getActivity().getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
         editor = sharedPref.edit();
     }
 
